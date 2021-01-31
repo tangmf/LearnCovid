@@ -1,3 +1,4 @@
+// API Settings
 var settings = {
     "url": "https://api.covid19api.com/summary",
     "method": "GET",
@@ -10,6 +11,7 @@ var settings = {
 
   // Document Ready
   $(document).ready(function (){
+      $("#global_stats_loading").hide(); // hide loading text
       loadAPI();
 
   });
@@ -19,6 +21,7 @@ var settings = {
     $.ajax(settings).done(function (response) {
         console.log(response);
         console.log(response.Global.NewConfirmed);
+        $("#global_stats_loading").show(); // loading starts
         
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
@@ -43,5 +46,7 @@ var settings = {
             console.log(response.Countries[i]);
           }
         }
+
+        $("#global_stats_loading").hide(); // loading has finished
       });
   }
