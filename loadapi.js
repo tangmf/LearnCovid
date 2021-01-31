@@ -42,15 +42,15 @@ var settings = {
   }
   function search(){
     $.ajax(settings).done(function (response) {
-      var foundCountry;
+      let foundCountry = false;
       var i;
       for (i=0;i<response.Countries.length;i++){
         if(response.Countries[i].Country == $("#search_input").val()){
           foundCountry = true;
           console.log("found");
           let countryName = response.Countries[i].Country;
-          let countryCases = response.Countries[i].Cases;
-          $("#search_output").html(`<p>${countryName}</p><p>Cases: ${countryCases}</p>`)
+          let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
+          $("#search_output").html(`<p>${countryName}</p><p>Cases: ${countryTotalConfirmed}</p>`)
         }
       }
       if(foundCountry == false){
