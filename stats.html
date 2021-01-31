@@ -14,6 +14,19 @@
 	<link rel="stylesheet" href="style.css">
   <script src="api.js" defer></script>
 
+  <!-- Mapbox -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'>
+
+	</script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js">
+
+	</script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+	 type="text/css" />
+
 	<title>Learn Covid</title>
 </head>
 
@@ -59,6 +72,11 @@
           <h5 id = "totalRecovered_output"></h5>
       </div>
 
+  </section>
+  <!-- Mapbox map -->
+  <section id = "map-section">
+  <script src = "loadmap.js"></script>
+  <div id='map' style= 'height: 100vh;'></div>
   </section>
   
 
