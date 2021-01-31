@@ -19,3 +19,33 @@ body{
 h1{
     margin: 5%;
 }
+
+/* Home Page */
+
+/* Menu */
+#menu{
+    display: flex;
+    align-items: center;
+}
+.menu_option{
+    padding: 15px 15px;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.menu_option:hover{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+
+}
