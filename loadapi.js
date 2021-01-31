@@ -50,7 +50,9 @@ var settings = {
           console.log("found");
           let countryName = response.Countries[i].Country;
           let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
-          $("#search_output").html(`<p>${countryName}</p><p>Cases: ${countryTotalConfirmed}</p>`)
+          let countryTotalDeaths = response.Countries[i].TotalDeaths;
+          let countryTotalRecovered = response.Countries[i].TotalRecovered;
+          $("#search_output").html(`<p>Country: ${countryName}</p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`)
         }
       }
       if(foundCountry == false){
