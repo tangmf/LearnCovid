@@ -13,14 +13,15 @@ var settings = {
   $(document).ready(function (){
       $("#global_stats_loading").hide(); // hide loading text
       loadAPI();
-
+      $("#search_btn").click(function () {
+        search();
+      });
   });
 
   // function that loads api and outputs data to the page
   function loadAPI(){
     $.ajax(settings).done(function (response) {
         console.log(response);
-        console.log(response.Global.NewConfirmed);
         $("#global_stats_loading").show(); // loading starts
         
         /* Global stats */
@@ -36,17 +37,25 @@ var settings = {
         $("#newRecovered_output").text("New Recovered: " + newRecovered);
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
-        $("#global_stats_loading").hide(); // loading has finished
-      
-      
-        var i;
-        for (i=0;i<response.Countries.length;i++){
-          if(response.Countries[i].Country == "Singapore"){
-            console.log("Singapore");
-            console.log(response.Countries[i]);
-          }
-        }
-
-        
+        $("#global_stats_loading").hide(); // loading has finished  
       });
+  }
+  function search(){
+    $.ajax(settings).done(function (response) {
+      var foundCountry;
+      var i;
+      for (i=0;i<response.Countries.length;i++){
+        if(response.Countries[i].Country == $("#search_input").val()){
+          foundCountry = true;
+          console.log("found");
+          let countryName = response.Countries[i].Country;
+          let countryCases = response.Countries[i].Cases;
+          $("#search_output").html(`<p>${countryName}</p><p>Cases: ${countryCases}</p>`)
+        }
+      }
+      if(foundCountry == false){
+        console.log("Country not found");
+        $("#search_output").html(`<p>Country not found</p>`)
+      }
+    });
   }
