@@ -25,18 +25,18 @@ var settings = {
         
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
-        $("#newConfirmed_output").append(newConfirmed);
+        $("#newConfirmed_output").text("New Confirmed: " + newConfirmed);
         let totalConfirmed = response.Global.TotalConfirmed;
-        $("#totalConfirmed_output").append(totalConfirmed);
+        $("#totalConfirmed_output").text("Total Confirmed: " + totalConfirmed);
         let newDeaths = response.Global.NewDeaths;
-        $("#newDeaths_output").append(newDeaths);
+        $("#newDeaths_output").text("New Deaths: " + newDeaths);
         let totalDeaths = response.Global.TotalDeaths;
-        $("#totalDeaths_output").append(totalDeaths);
+        $("#totalDeaths_output").text("Total Deaths: " + totalDeaths);
         let newRecovered = response.Global.NewRecovered;
-        $("#newRecovered_output").append(newRecovered);
+        $("#newRecovered_output").text("New Recovered: " + newRecovered);
         let totalRecovered = response.Global.TotalRecovered;
-        $("#totalRecovered_output").append(totalRecovered);
-        
+        $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
+        $("#global_stats_loading").hide(); // loading has finished
       
       
         var i;
@@ -47,6 +47,6 @@ var settings = {
           }
         }
 
-        $("#global_stats_loading").hide(); // loading has finished
+        
       });
   }
