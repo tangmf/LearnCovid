@@ -12,8 +12,11 @@ var settings = {
   // Document Ready
   $(document).ready(function (){
       $("#global_stats_loading").hide(); // hide loading text
+      $("#search_loading").hide();
       loadAPI();
       $("#search_btn").click(function () {
+        $("#search_output").text("");
+        $("#search_loading").show();
         search();
       });
   });
@@ -52,7 +55,7 @@ var settings = {
       let foundCountry = false;
       var i;
       for (i=0;i<response.Countries.length;i++){
-        if(response.Countries[i].Country == $("#search_input").val()){
+        if((response.Countries[i].Country).toLowerCase() == $("#search_input").val().toLowerCase()){ // non case-sensitive feature
           foundCountry = true;
           console.log("found");
           let countryName = response.Countries[i].Country;
@@ -63,8 +66,15 @@ var settings = {
         }
       }
       if(foundCountry == false){
-        console.log("Country not found");
-        $("#search_output").html(`<p>Country not found</p>`)
+        let inputCountry = $("#search_input").val();
+        if(inputCountry == ""){
+          $("#search_output").html(`<p>Enter something!</p>`) // input is empty
+        }
+        else{
+          console.log("Country not found");
+          $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
+        }
       }
+      $("#search_loading").hide();
     });
   }
