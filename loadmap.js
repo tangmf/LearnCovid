@@ -9,19 +9,18 @@ navigator.geolocation.getCurrentPosition(successLocation, errorLocation,
 
 function successLocation(position) {
   /* Hide notice when location is found */
-  $("#notice").hide();
-  setupMap([position.coords.longitude, position.coords.latitude]);
+  setupMap();
   
-
 }
 
-function errorLocation() { }
+function errorLocation() { }{
+    setupMap();
+}
 
-function setupMap(center) {
+function setupMap() {
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: center,
     zoom: 0
   });
   const nav = new mapboxgl.NavigationControl();
@@ -32,8 +31,17 @@ function setupMap(center) {
 
   var storedCountries = JSON.parse(localStorage.getItem("Countries"));
   for (i=0;i<storedCountries.length;i++){
-      console.log(storedCountries[i].Country);
+      console.log(storedCountries[i].CountryCode);
+      /*
+      var marker = new mapboxgl.Marker()
+        .setLngLat()
+        .addTo(map);
+        */
   }
 
 
+}
+
+function getCoords(){
+    
 }
