@@ -38,6 +38,13 @@ var settings = {
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
         $("#global_stats_loading").hide(); // loading has finished  
+
+        var countryList = [];
+        for (i=0;i<response.Countries.length;i++){
+          countryList.push(response.Countries[i]);
+        }
+
+        localStorage.setItem("Countries", JSON.stringify(countryList));
       });
   }
   function search(){

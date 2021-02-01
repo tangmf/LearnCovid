@@ -28,5 +28,12 @@ function setupMap(center) {
   
   /* Add navigation */
   map.addControl(nav);
+  
+
+  var storedCountries = JSON.parse(localStorage.getItem("Countries"));
+  for (i=0;i<storedCountries.length;i++){
+      console.log(storedCountries[i].Country);
+  }
+
 
 }
