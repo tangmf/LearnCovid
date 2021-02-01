@@ -62,7 +62,9 @@ ID Assignment 3
 * bootstrap
 
 ## [6] Credits
-
+### Content
+* The text for the learn.html was copied and paraphrased from [Johns Hopkins Medicine's](https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus) website.
 ### Acknowledgements
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
+
 
