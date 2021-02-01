@@ -29,6 +29,26 @@ function setupMap() {
   map.addControl(nav);
   
 
+  // read data from json file
+  let url = "country-codes-lat-long-alpha3.json";
+    fetch(url)
+    .then(response => response.json())
+    .then(function(data){
+        for (i=0;i<data.ref_country_codes.length;i++){
+            console.log(data.ref_country_codes[i].country);
+            /*
+            var marker = new mapboxgl.Marker()
+            .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
+            .addTo(map);
+            */
+            var popup = new mapboxgl.Popup()
+            .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
+            .setHTML(`<div id = "popup">${data.ref_country_codes[i].country}</div>`)
+            .addTo(map);
+        }
+
+    });
+    
   var storedCountries = JSON.parse(localStorage.getItem("Countries"));
   for (i=0;i<storedCountries.length;i++){
       console.log(storedCountries[i].CountryCode);
@@ -38,10 +58,8 @@ function setupMap() {
         .addTo(map);
         */
   }
+  
 
 
 }
 
-function getCoords(){
-    
-}
