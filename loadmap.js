@@ -73,6 +73,7 @@ function setupMap(){
             }
             
         }
+        $(".map_loading").hide();
         /*
         for (i=0;i<data.ref_country_codes.length;i++){
             console.log(data.ref_country_codes[i].country);
