@@ -123,6 +123,9 @@ section{
 .global_stats_icon{
     width:100%;
 }
+.global_stats_icon:hover{
+    width:110%;
+}
 .column{
     display: flex;
     flex-direction: column;
