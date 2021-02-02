@@ -68,5 +68,6 @@ Note: derpsnow == Tang Ming Feng
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
 * Quiz Youtube Tutorial by: [brain design](https://www.youtube.com/watch?v=f4fB9Xg2JEY)
+* Lottie (thinking) from [https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_pyiyoyxf.json]
 
 
