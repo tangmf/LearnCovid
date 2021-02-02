@@ -38,7 +38,15 @@ section{
 }
 
 /* Home Page */
+#home_header{
+    margin: 5%;
+}
+#thinking_lottie{
+    position: relative;
+    margin-left: 60%;
+    margin-bottom: -5%;
 
+}
 /* Menu */
 #menu{
     display: flex;
@@ -127,5 +135,7 @@ section{
 }
 /* Responsive */
 @media screen and (max-width: 800px) {
-    
+    p{
+        font-size: 60%;
+    }
 }
