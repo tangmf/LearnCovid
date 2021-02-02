@@ -15,6 +15,18 @@ h2{
     margin-bottom: 4rem;
 }
 
+.content_container{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 3% 3%;
+    height: 80%;
+    background-color: #d6d6d6;
+    box-shadow: 0 9px #999;
+}
+
 .container{
     display:flex;
     justify-content: center;
