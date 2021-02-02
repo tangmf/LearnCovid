@@ -41,11 +41,32 @@ function setupMap(){
         for (i=0;i<storedCountries.length;i++){
             for (j=0;j<data.ref_country_codes.length;j++){
                 if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
-                    console.log("found");
+                    // popup for the coordiante
                     var popup = new mapboxgl.Popup()
                     .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                    .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>${storedCountries[i].TotalConfirmed}</u></div>`)
+                    .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
                     .addTo(map);
+                    // Total Confirmed: 5k:green, 30k:yellow, 100k:orange, higher:red
+                    if (storedCountries[i].TotalConfirmed <= 5000){
+                        var marker = new mapboxgl.Marker({color: 'green'})
+                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                        .addTo(map);
+                    }
+                    else if (storedCountries[i].TotalConfirmed <= 30000){
+                        var marker = new mapboxgl.Marker({color: 'yellow'})
+                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                        .addTo(map);
+                    }
+                    else if (storedCountries[i].TotalConfirmed <= 100000){
+                        var marker = new mapboxgl.Marker({color: 'orange'})
+                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                        .addTo(map);
+                    }
+                    else{
+                        var marker = new mapboxgl.Marker({color: 'red'})
+                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                        .addTo(map);
+                    }
                 }
             }
             
