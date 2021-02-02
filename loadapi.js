@@ -55,8 +55,9 @@ var settings = {
       let foundCountry = false;
       var i;
       for (i=0;i<response.Countries.length;i++){
-        if((response.Countries[i].Country).toLowerCase() == $("#search_input").val().toLowerCase()){ // non case-sensitive feature
+        if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase())){ // non case-sensitive feature
           foundCountry = true;
+          // missing validation for when multiple records meet the requirements
           console.log("found");
           let countryName = response.Countries[i].Country;
           let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
