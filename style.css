@@ -102,6 +102,11 @@ section{
     justify-content: space-evenly;
 
 }
+.map_loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #popup{
     border-radius: 15px;

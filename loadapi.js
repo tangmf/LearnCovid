@@ -11,12 +11,12 @@ var settings = {
 
   // Document Ready
   $(document).ready(function (){
-      $("#global_stats_loading").hide(); // hide loading text
-      $("#search_loading").hide();
+      $(".global_stats_loading").hide(); // hide loading text
+      $(".search_loading").hide();
       loadAPI();
       $("#search_btn").click(function () {
         $("#search_output").text("");
-        $("#search_loading").show();
+        $(".search_loading").show();
         search();
       });
   });
@@ -25,7 +25,7 @@ var settings = {
   function loadAPI(){
     $.ajax(settings).done(function (response) {
         console.log(response);
-        $("#global_stats_loading").show(); // loading starts
+        $(".global_stats_loading").show(); // loading starts
         
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
@@ -40,7 +40,7 @@ var settings = {
         $("#newRecovered_output").text("New Recovered: " + newRecovered);
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
-        $("#global_stats_loading").hide(); // loading has finished  
+        $(".global_stats_loading").hide(); // loading has finished  
 
         var countryList = [];
         for (i=0;i<response.Countries.length;i++){
@@ -76,6 +76,6 @@ var settings = {
           $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
         }
       }
-      $("#search_loading").hide();
+      $(".search_loading").hide();
     });
   }
