@@ -90,6 +90,17 @@ section{
 #global_stats_output{
     border-radius: 15px;
     padding: 3% 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.global_stats_icon{
+    width:100%;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #map{
     border-radius: 15px;
