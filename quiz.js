@@ -20,7 +20,7 @@ let questions = [
         choice2: 'Virus',
         choice3: 'Cell',
         choice4: 'Device',
-        answer: 'Virus',
+        answer: '2',
     },
     {
         question: 'In what year did we find out about Covid-19?',
@@ -28,7 +28,23 @@ let questions = [
         choice2: '2016',
         choice3: '2021',
         choice4: '2019',
-        answer: '2019',
+        answer: '4',
+    },
+    {
+        question: 'How does Covid-19 spread?',
+        choice1: 'Through direct contant with a bear',
+        choice2: 'Through droplets of saliva from an infected person',
+        choice3: 'By washing your hands regularly',
+        choice4: 'By staying at home',
+        answer: '2',
+    },
+    {
+        question: 'What should you do if you feel unwell?',
+        choice1: 'See a doctor immediately',
+        choice2: 'Go out with your friends',
+        choice3: 'Not wear a mask when going out',
+        choice4: 'Do some exercise',
+        answer: '1',
     },
 ]
 
@@ -39,7 +55,7 @@ startGame = () =>{
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    getNewQuestion;
+    getNewQuestion();
 }
 getNewQuestion = () => {
     if(availableQuestions.Length === 0 || questionCounter > MAX_QUESTIONS){
@@ -71,7 +87,7 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return
 
         acceptingAnswers = false;
-        const selectChoice = e.target;
+        const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
