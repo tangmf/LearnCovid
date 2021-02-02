@@ -1,3 +1,7 @@
+*{
+    font-size: 10px;
+}
+
 /* container used to hold the questions */
 .choice-container{
     display: flex;
