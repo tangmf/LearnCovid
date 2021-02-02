@@ -80,6 +80,16 @@ h1{
     flex-direction: row;
 }
 
+#map_legend_container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 3% 3%;
+    background-color: #d6d6d6;
+    box-shadow: 0 9px #999;
+}
 /* Responsive */
 @media screen and (max-width: 800px) {
     
