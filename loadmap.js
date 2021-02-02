@@ -14,15 +14,15 @@ function successLocation(position) {
 }
 
 function errorLocation() { }{
-    setupMap();
+    console.log("error location");
 }
 
-function setupMap() {
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 0
-  });
+function setupMap(){
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      zoom: 0
+    });
   const nav = new mapboxgl.NavigationControl();
   
   /* Add navigation */
@@ -34,30 +34,37 @@ function setupMap() {
     fetch(url)
     .then(response => response.json())
     .then(function(data){
+
+        /* get stats for each country from local storage */
+        var storedCountries = JSON.parse(localStorage.getItem("Countries"));
+        for (i=0;i<storedCountries.length;i++){
+            for (j=0;j<data.ref_country_codes.length;j++){
+                if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
+                    console.log("found");
+                    var popup = new mapboxgl.Popup()
+                    .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                    .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>${storedCountries[i].TotalConfirmed}</u></div>`)
+                    .addTo(map);
+                }
+            }
+            
+        }
+        /*
         for (i=0;i<data.ref_country_codes.length;i++){
             console.log(data.ref_country_codes[i].country);
-            /*
+            
             var marker = new mapboxgl.Marker()
             .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
             .addTo(map);
-            */
+            
             var popup = new mapboxgl.Popup()
             .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
             .setHTML(`<div id = "popup">${data.ref_country_codes[i].country}</div>`)
             .addTo(map);
         }
+        */
 
     });
-    
-  var storedCountries = JSON.parse(localStorage.getItem("Countries"));
-  for (i=0;i<storedCountries.length;i++){
-      console.log(storedCountries[i].CountryCode);
-      /*
-      var marker = new mapboxgl.Marker()
-        .setLngLat()
-        .addTo(map);
-        */
-  }
   
 
 
