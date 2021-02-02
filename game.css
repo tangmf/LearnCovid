@@ -74,6 +74,16 @@
     background: rgb(11,223, 36);
     width: 0%;
 }
+#exit_btn{
+    margin: 3%;
+    font-size: 3.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+#exit_btn:hover{
+    color:red;
+}
 /* responsive */
 
 @media screen and (max-width: 768px){
