@@ -2,9 +2,9 @@
 ID Assignment 3
 
 # Documentation
-
 ### Group members: Tang Ming Feng, Josiah Low
 ### Covid information website for kids
+Note: derpsnow == Tang Ming Feng
 
 ## Table of Contents
 - [1] Purpose
