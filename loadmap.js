@@ -42,22 +42,24 @@ function setupMap(){
             for (j=0;j<data.ref_country_codes.length;j++){
                 if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
                     // popup for the coordiante
+                    /*
                     var popup = new mapboxgl.Popup()
                     .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                     .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
                     .addTo(map);
-                    // Total Confirmed: 5k:green, 30k:yellow, 100k:orange, higher:red
-                    if (storedCountries[i].TotalConfirmed <= 5000){
+                    */
+                    // Total Confirmed: 10k:green, 100k:yellow, 1000k:orange, higher:red
+                    if (storedCountries[i].TotalConfirmed <= 10000){
                         var marker = new mapboxgl.Marker({color: 'green'})
                         .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                         .addTo(map);
                     }
-                    else if (storedCountries[i].TotalConfirmed <= 30000){
+                    else if (storedCountries[i].TotalConfirmed <= 100000){
                         var marker = new mapboxgl.Marker({color: 'yellow'})
                         .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                         .addTo(map);
                     }
-                    else if (storedCountries[i].TotalConfirmed <= 100000){
+                    else if (storedCountries[i].TotalConfirmed <= 1000000){
                         var marker = new mapboxgl.Marker({color: 'orange'})
                         .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                         .addTo(map);
