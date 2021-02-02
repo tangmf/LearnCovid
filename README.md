@@ -17,27 +17,33 @@ Note: derpsnow == Tang Ming Feng
       
 ## [1] Purpose
 
-### User audience:
+### User audience: 
+Young kids and parents.
 
 
 ### Intent:
+Make young kids more aware and knowledgable of the virus, and take up good practices and habits to avoid contracting the virus.
 
 
 ### Purpose:
+Make kids take up good practices and habits to avoid contracting the virus and staying safe.
 
 
 ### Who the website is catering for and value it provides for users:
+Kids: Fun interactive experience that is also educational.
+Parents: Help their child be more aware of the situation, while having fun.
 
 
 ### What is the website catering for?
+The website caters for kids to have a fun, interactive and educational experience learning about world issues like covid, making them more aware.
 
 
 ## [2] Design Process
 
-
+Colors aim to suggest fun for the kids.
 
 ### Link to Github Pages
-[github page]()
+[github page](https://tangmf.github.io/Assignment3/index.html)
 ### Link to wireframe
 [wireframe]()
 
@@ -49,6 +55,10 @@ Note: derpsnow == Tang Ming Feng
 ### All pages
 * All pages have a responsive navigation bar made using bootstrap that is set to the top of the screen.
 * All pages are responsive.
+### Home page
+### Learn page
+### Quiz page
+### Stats page
 
 ## [4] Testing
 
@@ -60,6 +70,11 @@ Note: derpsnow == Tang Ming Feng
 * javascript
 * jquery
 * bootstrap
+* postman
+* postman covid19 API
+* json
+* mapbox API
+* lotties
 
 ## [6] Credits
 ### Content
