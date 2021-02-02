@@ -1,5 +1,4 @@
 /* container used to hold the questions */
-
 .choice-container{
     display: flex;
     margin-bottom: 0.8rem;
@@ -22,11 +21,13 @@
 .choice-prefix{
     padding: 2rem 2.5rem;
     color:white;
+    font-size: 1.5rem;
 }
 
 .choice-text{
     padding: 2rem;
     width: 100%;
+    font-size: 1.5rem;
 }
 
 /* when choice is correct or incorrect */
