@@ -46,11 +46,20 @@
     </div>
   </nav>
   <div id = "home_header">
-    <h1>Learn Covid!</h1>
     <!-- Covid lottie -->
-    <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_M6ViMo.json"  background="transparent"  speed="3"  style="width: 150px; height: 150px;"  loop  autoplay></lottie-player>
+    <lottie-player id = "covid_lottie" src="https://assets4.lottiefiles.com/private_files/lf30_M6ViMo.json"  background="transparent"  speed="3"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>
+    <h1>Learn Covid!</h1>
   </div>
-  <lottie-player id = "thinking_lottie" src="https://assets6.lottiefiles.com/packages/lf20_pyiyoyxf.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop  autoplay></lottie-player>
+  <div id = "thinking_person">
+      <div id="instructions">
+        <h4>Let's get started!</h4>
+        <br>
+        <p>Select the learn option to start learning!</p>
+        <p>If you are up to the challenge, take the quiz to test your knowledge!</p>
+        <p>To see how the virus has spread and how many lives it has affected, check out the stats!</p>
+      </div>
+      <lottie-player id = "thinking_lottie" src="https://assets6.lottiefiles.com/packages/lf20_pyiyoyxf.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop  autoplay></lottie-player>
+  </div>
   <section id = "menu">
       <div id = "menu_option_container">
         <a class = "menu_option" href = "learn.html">
