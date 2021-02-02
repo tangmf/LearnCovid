@@ -65,13 +65,28 @@
       <div class = "global_stats_loading">Loading...</div>
       <lottie-player class = "global_stats_loading" src="https://assets3.lottiefiles.com/datafiles/67bae0ddb57b26679d10e9ce7c1d445f/data.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop  autoplay></lottie-player>
       <div id = "global_stats_output">
-          <h5 id = "newConfirmed_output"></h5>
-          <h5 id = "totalConfirmed_output"></h5>
-          <img src = "Images/death_icon.png">
-          <h5 id = "newDeaths_output"></h5>
-          <h5 id = "totalDeaths_output"></h5>
-          <h5 id = "newRecovered_output"></h5>
-          <h5 id = "totalRecovered_output"></h5>
+          <div class = "row">
+            <img class = "global_stats_icon" src = "Images/confirmed_icon.png">
+            <div>
+                <h5 id = "newConfirmed_output"></h5>
+                <h5 id = "totalConfirmed_output"></h5>
+            </div>
+          </div>
+          <div class = "row">
+            <img class = "global_stats_icon" src = "Images/recovered_icon.png">
+            <div>
+                <h5 id = "newRecovered_output"></h5>
+                <h5 id = "totalRecovered_output"></h5>
+            </div>
+          </div>
+          <div class = "row">
+            <img class = "global_stats_icon" src = "Images/death_icon.png">
+            <div>
+                <h5 id = "newDeaths_output"></h5>
+                <h5 id = "totalDeaths_output"></h5>
+            </div>
+          </div>
+          
       </div>
   </section>
 

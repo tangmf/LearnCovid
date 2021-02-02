@@ -91,6 +91,9 @@ section{
     border-radius: 15px;
     padding: 3% 3%;
 }
+.global_stats_icon{
+    width:30%;
+}
 #map{
     border-radius: 15px;
     margin-top: 2%;
