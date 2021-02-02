@@ -37,6 +37,7 @@ function setupMap(){
 
         /* get stats for each country from local storage */
         var storedCountries = JSON.parse(localStorage.getItem("Countries"));
+        /* loop through country stats and country coordinates. if country code is the same, means there are covid cases, and show it on the map. */
         for (i=0;i<storedCountries.length;i++){
             for (j=0;j<data.ref_country_codes.length;j++){
                 if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
