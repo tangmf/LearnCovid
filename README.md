@@ -79,6 +79,11 @@ Colors aim to suggest fun for the kids.
 ## [6] Credits
 ### Content
 * The info for the learn.html was copied and paraphrased from [Johns Hopkins Medicine's](https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus) website and [World Health Organization's](https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19) website.
+
+### Images
+* The covid.jpg image was taken from https://www.forbes.com/sites/victoriaforster/2020/04/02/there-is-a-coronavirus-coloring-book-designed-to-help-children-cope-with-the-pandemic/?sh=22bdf8c33ca5
+* The cough.jpg image was taken from https://depositphotos.com/88981330/stock-illustration-coughing-woman-cartoon-vector-illustration.html
+* The sneeze.jpg image was taken from https://depositphotos.com/vector-images/sneeze.html?qview=54165171
 ### Acknowledgements
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
