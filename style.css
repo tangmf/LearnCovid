@@ -154,6 +154,22 @@ section{
     background-color: #d6d6d6;
     box-shadow: 0 9px #999;
 }
+
+/* Learn page */
+
+.content_container2{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    padding: 3% 3%;
+    background-color: #F6454F;
+    box-shadow: 0 9px #999;
+    color: white;
+}
+
+
 /* Responsive */
 @media screen and (max-width: 800px) {
     p{
