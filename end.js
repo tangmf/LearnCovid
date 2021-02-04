@@ -1,4 +1,4 @@
-const username = document.querySelector('#username');
+const username = document.querySelector('#username')
 const saveScoreBtn = document.querySelector('#saveScoreBtn');
 const finalScore = document.querySelector('#finalScore');
 const mostRecentScore = document.querySelector('#mostRecentScore');
@@ -34,5 +34,3 @@ saveHighScore = e => {
 }
 
 
-var storedScore = JSON.parse(localStorage.getItem("mostRecentScore"));
-$("#score").text(`Score: ${storedScore}`);
