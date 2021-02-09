@@ -5,6 +5,8 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
+const healthBarFull = document.querySelector('#healthBarFull');
+const healthText = document.querySelector('#health')
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -107,7 +109,9 @@ let questions = [
 ]
 
 const SCORE_POINTS = 100;
+const HEALTH_POINTS = 2;
 const MAX_QUESTIONS = 10;
+var health = 20;
 
 startGame = () => {
     questionCounter = 0;
@@ -153,6 +157,9 @@ choices.forEach(choice => {
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'correct') {
+            
+            decrementHealth(HEALTH_POINTS);
+            healthBarFull.style.width = `${(health/20) * 100}%`;
             incrementScore(SCORE_POINTS);
         }
         
@@ -168,6 +175,12 @@ choices.forEach(choice => {
     })
 })
 
+decrementHealth = num => {
+    
+    health -= num;
+    healthText.innerText = `${health}/20`;
+
+}
 incrementScore = num => {
     score +=num;
     scoreText.innerText = score;
