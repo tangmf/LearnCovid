@@ -169,6 +169,18 @@ section{
     color: white;
 }
 
+.content_container3{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    padding: 3% 3%;
+    background-color: #FFD503;
+    box-shadow: 0 9px #999;
+    color: white;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 800px) {
