@@ -56,9 +56,9 @@ var settings = {
   function search(){
     $("#search_multiple").empty();
     $("#search_multiple").hide();
-    $("#search_output").show();
     let inputCountry = $("#search_input").val();
     if(inputCountry == ""){
+      $("#search_output").show();
       $("#search_output").html(`<p>Enter something!</p>`) // input is empty
       $(".search_loading").hide();
     }
@@ -77,17 +77,20 @@ var settings = {
             let countryTotalDeaths = response.Countries[i].TotalDeaths;
             let countryTotalRecovered = response.Countries[i].TotalRecovered;
             outputList.push(countryName);
+            $("#search_output").show();
             $("#search_output").html(`<p><b>${countryName}</b></p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`)
           }
         }
         if (outputCount > 1){
+          $("#search_output").show();
           $("#search_multiple").show();
           $("#search_multiple").append("Other results: ");
           for (i=0;i<outputList.length;i++){
-            $("#search_multiple").append(outputList[i] + ",");
+            $("#search_multiple").append(outputList[i] + " , ");
           }
         }
         else if(outputCount == 0){
+          $("#search_output").show();
             console.log("Country not found");
             $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
         }
