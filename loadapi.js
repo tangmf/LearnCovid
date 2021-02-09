@@ -32,8 +32,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         search();
       });
       $("#popup_btn").click(function (){
-        preventDefault()
-        toggle_popup();
+        toggle_popup(map);
+      });
+      $("#apply_btn").click(function(){
+        event.preventDefault()
+        navigator.geolocation.getCurrentPosition(successLocation, errorLocation,
+          {
+            enableHighAccuracy: true
+          });
       });
   });
 
@@ -149,13 +155,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
           for (i=0;i<storedCountries.length;i++){
               for (j=0;j<data.ref_country_codes.length;j++){
                   if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
-                      // popup for the coordiante
-                      /*
-                      var popup = new mapboxgl.Popup()
-                      .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                      .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
-                      .addTo(map);
-                      */
                       // Total Confirmed: 10k:green, 100k:yellow, 1000k:orange, higher:red
                       if (storedCountries[i].TotalConfirmed <= 10000){
                           var marker = new mapboxgl.Marker({color: 'green'})
@@ -177,7 +176,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
                       }
+
+                      if(document.getElementById("popup_chkbx").checked){
+                         // popup for the coordiante
+                        var popup = new mapboxgl.Popup()
+                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                        .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
+                        .addTo(map);
+                      
+                      }
                   }
+                  
               }
               
           }
@@ -200,15 +209,3 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
       });
   }
 
-function toggle_popup(){
-    /* get stats for each country from local storage */
-    var storedCountries = JSON.parse(localStorage.getItem("Countries"));
-    for (i=0;i<data.ref_country_codes.length;i++){
-        console.log(data.ref_country_codes[i].country);
-        
-        var popup = new mapboxgl.Popup()
-        .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
-        .setHTML(`<div id = "popup">${data.ref_country_codes[i].country}</div>`)
-        .addTo(map);
-    }
-  }
