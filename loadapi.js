@@ -12,6 +12,7 @@ var settings = {
   // Document Ready
   $(document).ready(function (){
       $(".global_stats_loading").hide(); // hide loading text
+      $(".global_stats_icon").hide();
       $(".search_loading").hide();
       loadAPI();
       $("#search_btn").click(function () {
@@ -41,7 +42,7 @@ var settings = {
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
         $(".global_stats_loading").hide(); // loading has finished  
-
+        $(".global_stats_icon").show();
         var countryList = [];
         for (i=0;i<response.Countries.length;i++){
           countryList.push(response.Countries[i]);
