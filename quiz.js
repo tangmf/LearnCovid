@@ -5,7 +5,6 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
-const lottie = document.querySelector('#lottie')
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -95,8 +94,6 @@ choices.forEach(choice => {
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'correct') {
-            lottie.style.width = `${(questionCounter/MAX_QUESTIONS)}%`;
-            lottie.style.height = `${(questionCounter/MAX_QUESTIONS)}%`;
             incrementScore(SCORE_POINTS);
         }
         
