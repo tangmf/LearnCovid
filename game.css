@@ -84,19 +84,17 @@
 #exit_btn:hover{
     color:red;
 }
+
 /* responsive */
-
-.lottie{
-    display:flex;
-    flex-direction: row;
-    width: 400px;
-    height: 400px;
-}
-
-
 
 @media screen and (max-width: 768px){
     .choice-container{
-        min-width: 40rem;
+        display: flex;
+        margin-bottom: 0.8rem;
+        width: 100%;
+        border-radius: 4px;
+        background: rgb(18,93,255);
+        font-size: 70%;
+        min-width: 6rem;;
     }
 }
