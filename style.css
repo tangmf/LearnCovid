@@ -151,9 +151,9 @@ section{
 #map_settings{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 15px;
     padding: 3% 3%;
-
 }
 #map{
     border-radius: 15px;
