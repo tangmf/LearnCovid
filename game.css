@@ -60,6 +60,7 @@
     text-align: center;
 }
 
+
 #progressBar{
     width: 20rem;
     height: 3rem;
@@ -74,6 +75,22 @@
     background: rgb(11,223, 36);
     width: 0%;
 }
+
+#healthBar{
+    width: 20rem;
+    height: 3rem;
+    border: 0.2rem solid rgba(230,29, 29, 1);
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#healthBarFull{
+    height: 100%;
+    background: rgba(230,29, 29, 1);
+    width: 100%;
+}
+
 #exit_btn{
     margin: 3%;
     font-size: 3.5rem;
