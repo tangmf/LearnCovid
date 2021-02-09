@@ -14,6 +14,8 @@ var settings = {
       $(".global_stats_loading").hide(); // hide loading text
       $(".global_stats_icon").hide();
       $(".search_loading").hide();
+      $("#search_multiple").hide();
+      $("#search_output").hide();
       loadAPI();
       $("#search_btn").click(function () {
         $("#search_output").text("");
@@ -53,6 +55,8 @@ var settings = {
   }
   function search(){
     $("#search_multiple").empty();
+    $("#search_multiple").hide();
+    $("#search_output").show();
     let inputCountry = $("#search_input").val();
     if(inputCountry == ""){
       $("#search_output").html(`<p>Enter something!</p>`) // input is empty
@@ -64,7 +68,7 @@ var settings = {
         let outputList = [];
         let outputCount = 0;
         for (i=0;i<response.Countries.length;i++){
-          if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase())){ // non case-sensitive feature
+          if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase()) && inputCountry.length > 3){ // non case-sensitive feature
             outputCount ++;
             // missing validation for when multiple records meet the requirements
             console.log("found");
@@ -73,10 +77,11 @@ var settings = {
             let countryTotalDeaths = response.Countries[i].TotalDeaths;
             let countryTotalRecovered = response.Countries[i].TotalRecovered;
             outputList.push(countryName);
-            $("#search_output").html(`<p>Country: ${countryName}</p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`)
+            $("#search_output").html(`<p><b>${countryName}</b></p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`)
           }
         }
         if (outputCount > 1){
+          $("#search_multiple").show();
           $("#search_multiple").append("Other results: ");
           for (i=0;i<outputList.length;i++){
             $("#search_multiple").append(outputList[i] + ",");
