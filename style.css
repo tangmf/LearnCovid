@@ -189,6 +189,11 @@ section{
     p{
         font-size: 70%;
     }
+
+    li{
+        font-size: 70%;
+    }
+    
     .menu_option{
         height: 120px;
     }
