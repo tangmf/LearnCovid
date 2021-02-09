@@ -14,6 +14,7 @@ let availableQuestions = [];
 
 let questions = [
     {
+        // question 1
         question: 'What is Covid-19?',
         choice1: 'Bacteria',
         choice2: 'Virus',
@@ -22,6 +23,7 @@ let questions = [
         answer: '2',
     },
     {
+        // question 2
         question: 'In what year did we find out about Covid-19?',
         choice1: '2009',
         choice2: '2016',
@@ -30,6 +32,7 @@ let questions = [
         answer: '4',
     },
     {
+        // question 3
         question: 'How does Covid-19 spread?',
         choice1: 'Through direct contant with a bear',
         choice2: 'Through droplets of saliva from an infected person',
@@ -38,6 +41,7 @@ let questions = [
         answer: '2',
     },
     {
+        // question 4
         question: 'What should you do if you feel unwell?',
         choice1: 'See a doctor immediately',
         choice2: 'Go out with your friends',
@@ -45,10 +49,65 @@ let questions = [
         choice4: 'Do some exercise',
         answer: '1',
     },
+    {
+        // question 5
+        question: 'Where did COVID-19 start?',
+        choice1: 'Singapore',
+        choice2: 'Wuhan',
+        choice3: 'Russia',
+        choice4: 'USA',
+        answer: '2',
+    },
+    {
+        // question 6
+        question: 'What is an example of good hygiene?',
+        choice1: 'Touching the lift button and then touching your face',
+        choice2: 'Not washing your hands after using the restroom',
+        choice3: 'Washing hands frequently with soap and water for at least 20 seconds',
+        choice4: 'Using sanitizer with less than 60% alcohol',
+        answer: '3',
+    },
+    {
+        // question 7
+        question: 'What is one servere symptom of COVID-19?',
+        choice1: 'High temperature of more than 38°C',
+        choice2: 'Dry cough',
+        choice3: 'Headache',
+        choice4: 'Sore throat',
+        answer: '1',
+    },
+    {
+        // question 8
+        question: 'Can COVID-19 be spread by touching an infected person?',
+        choice1: 'Yes',
+        choice2: 'No, but it is recommended to avoid infected patients.',
+        choice3: 'Maybe',
+        choice4: 'Unsure',
+        answer: '2',
+    },
+    {
+        // question 9
+        question: 'What does the Coronavirus appear to have?',
+        choice1: 'A shirt',
+        choice2: 'A cap',
+        choice3: 'Sunglasses',
+        choice4: 'A crown',
+        answer: '4',
+    },
+    {
+        // question 10
+        question: 'Are you immune to COVID-19 if you have had it before?',
+        choice1: 'Yes',
+        choice2: 'No',
+        choice3: 'Maybe',
+        choice4: 'Unsure',
+        answer: '2',
+    },
+    
 ]
 
 const SCORE_POINTS = 100;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
     questionCounter = 0;
