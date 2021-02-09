@@ -189,15 +189,13 @@ section{
     p{
         font-size: 70%;
     }
-<<<<<<< HEAD
 
     li{
-        font-size: 60%;
+        font-size: 70%;
     }
-=======
+    
     .menu_option{
         height: 120px;
     }
     
->>>>>>> 6164e2ba412cc390ed45d332b92bfcb8d9d22def
 }
