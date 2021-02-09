@@ -31,6 +31,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         $(".search_loading").show();
         search();
       });
+      $("#popup_btn").click(function (){
+        preventDefault()
+        toggle_popup();
+      });
   });
 
   // function that loads api and outputs data to the page
@@ -194,4 +198,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
           */
   
       });
+  }
+
+function toggle_popup(){
+    /* get stats for each country from local storage */
+    var storedCountries = JSON.parse(localStorage.getItem("Countries"));
+    for (i=0;i<data.ref_country_codes.length;i++){
+        console.log(data.ref_country_codes[i].country);
+        
+        var popup = new mapboxgl.Popup()
+        .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
+        .setHTML(`<div id = "popup">${data.ref_country_codes[i].country}</div>`)
+        .addTo(map);
+    }
   }
