@@ -3,17 +3,16 @@
 
 body {
     background-color:  #6AD9D9;
-    
 }
 
 h1{
-    font-size: 5.4rem;
-    margin-bottom: 5rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
 h2{
-    font-size: 4.2rem;
-    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    margin: 3rem;
 }
 
 .content_container{
@@ -69,7 +68,7 @@ footer{
 }
 
 .btn{
-    font-size: 2.4rem;
+    font-size: 2rem;
     padding: 2rem 0;
     width: 30rem;
     text-align: center;
