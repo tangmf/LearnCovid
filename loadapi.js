@@ -156,35 +156,60 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
               for (j=0;j<data.ref_country_codes.length;j++){
                   if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
                       // Total Confirmed: 10k:green, 100k:yellow, 1000k:orange, higher:red
-                      if (storedCountries[i].TotalConfirmed <= 10000){
+                      if (storedCountries[i].TotalConfirmed <= 10000 && document.getElementById("green").checked){
                           var marker = new mapboxgl.Marker({color: 'green'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 100000){
+                      else if (storedCountries[i].TotalConfirmed <= 100000 && document.getElementById("yellow").checked){
                           var marker = new mapboxgl.Marker({color: 'yellow'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 1000000){
+                      else if (storedCountries[i].TotalConfirmed <= 1000000 && document.getElementById("orange").checked){
                           var marker = new mapboxgl.Marker({color: 'orange'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else{
+                      else if (storedCountries[i].TotalConfirmed > 1000000 && document.getElementById("red").checked){
                           var marker = new mapboxgl.Marker({color: 'red'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
+                           .addTo(map);
+                         
+                         }
                       }
 
-                      if(document.getElementById("popup_chkbx").checked){
-                         // popup for the coordiante
-                        var popup = new mapboxgl.Popup()
-                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                        .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
-                        .addTo(map);
-                      
-                      }
+
                   }
                   
               }
