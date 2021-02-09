@@ -118,9 +118,6 @@ section{
 #search_output{
     border-radius: 15px;
     padding: 3% 3%;
-    background-color: #F6454F;
-    box-shadow: 0 9px #999;
-    color: white;
 }
 #search_multiple{
     color: red;
@@ -176,8 +173,6 @@ section{
 #popup{
     border-radius: 15px;
     padding: 3% 3%;
-    background-color: #d6d6d6;
-    box-shadow: 0 9px #999;
 }
 
 /* Learn page */

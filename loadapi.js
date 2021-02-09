@@ -15,11 +15,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
 
   // Document Ready
   $(document).ready(function (){
-      $(".global_stats_loading").hide(); // hide loading text
       $(".global_stats_icon").hide();
       $(".search_loading").hide();
       $("#search_multiple").hide();
       $("#search_output").hide();
+      $(".map_container").hide();
       loadAPI();
       /* get current position, setup map when successful */
       navigator.geolocation.getCurrentPosition(successLocation, errorLocation,
@@ -47,7 +47,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
   function loadAPI(){
     $.ajax(settings).done(function (response) {
         console.log(response);
-        $(".global_stats_loading").show(); // loading starts
         
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
@@ -62,7 +61,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         $("#newRecovered_output").text("New Recovered: " + newRecovered);
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
-        $(".global_stats_loading").hide(); // loading has finished  
+        $(".global_stats_loading").hide();
         $(".global_stats_icon").show();
         var countryList = [];
         for (i=0;i<response.Countries.length;i++){
@@ -156,40 +155,66 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
               for (j=0;j<data.ref_country_codes.length;j++){
                   if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
                       // Total Confirmed: 10k:green, 100k:yellow, 1000k:orange, higher:red
-                      if (storedCountries[i].TotalConfirmed <= 10000){
+                      if (storedCountries[i].TotalConfirmed <= 10000 && document.getElementById("green").checked){
                           var marker = new mapboxgl.Marker({color: 'green'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 100000){
+                      else if (storedCountries[i].TotalConfirmed <= 100000 && document.getElementById("yellow").checked){
                           var marker = new mapboxgl.Marker({color: 'yellow'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 1000000){
+                      else if (storedCountries[i].TotalConfirmed <= 1000000 && document.getElementById("orange").checked){
                           var marker = new mapboxgl.Marker({color: 'orange'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .addTo(map);
+                         
+                         }
                       }
-                      else{
+                      else if (storedCountries[i].TotalConfirmed > 1000000 && document.getElementById("red").checked){
                           var marker = new mapboxgl.Marker({color: 'red'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
+                          if(document.getElementById("popup_chkbx").checked){
+                            // popup for the coordiante
+                           var popup = new mapboxgl.Popup()
+                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .addTo(map);
+                         
+                         }
                       }
 
-                      if(document.getElementById("popup_chkbx").checked){
-                         // popup for the coordiante
-                        var popup = new mapboxgl.Popup()
-                        .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                        .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><u>Total Confirmed: ${storedCountries[i].TotalConfirmed}</u></div>`)
-                        .addTo(map);
-                      
-                      }
+
                   }
                   
               }
               
           }
+          $(".map_container").show();
           $(".map_loading").hide();
           /*
           for (i=0;i<data.ref_country_codes.length;i++){
