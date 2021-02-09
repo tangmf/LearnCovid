@@ -28,7 +28,8 @@ footer{
 }
 
 h1{
-    margin: 5%;
+    margin: 3%;
+    font-size: 3rem;
 }
 section{
     background-color: #ebebeb;
@@ -39,7 +40,7 @@ section{
 
 /* Home Page */
 #home_header{
-    margin: 5%;
+    margin: 3%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,6 +53,7 @@ section{
     display: flex;
     flex-direction: row;
 }
+
 #instructions{
     display: flex;
     flex-direction: column;
@@ -185,10 +187,17 @@ section{
 /* Responsive */
 @media screen and (max-width: 800px) {
     p{
-        font-size: 60%;
+        font-size: 70%;
     }
+<<<<<<< HEAD
 
     li{
         font-size: 60%;
     }
+=======
+    .menu_option{
+        height: 120px;
+    }
+    
+>>>>>>> 6164e2ba412cc390ed45d332b92bfcb8d9d22def
 }
