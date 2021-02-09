@@ -123,10 +123,10 @@ section{
     align-items: center;
 }
 .global_stats_icon{
-    width:100%;
+    width:60%;
 }
 .global_stats_icon:hover{
-    width:110%;
+    width:65%;
 }
 .column{
     display: flex;
@@ -196,6 +196,9 @@ section{
     
     .menu_option{
         height: 120px;
+    }
+    h5{
+        font-size: 70%;
     }
     
 }
