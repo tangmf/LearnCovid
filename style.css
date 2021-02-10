@@ -213,4 +213,9 @@ aside{
         font-size: 70%;
     }
     
+    aside{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
 }
