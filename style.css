@@ -201,6 +201,11 @@ section{
     color: white;
 }
 
+aside{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 800px) {
