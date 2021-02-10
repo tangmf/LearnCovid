@@ -178,7 +178,7 @@ choices.forEach(choice => {
 decrementHealth = num => {
     
     health -= num;
-    healthText.innerText = `${health}/20`;
+    healthText.innerText = `COVID HP: ${health}/20`;
 
 }
 incrementScore = num => {
