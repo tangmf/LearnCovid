@@ -56,9 +56,15 @@ Colors aim to suggest fun for the kids.
 * All pages have a responsive navigation bar made using bootstrap that is set to the top of the screen.
 * All pages are responsive.
 ### Home page
+* Interactive menu that the user can interact with
+* Introduction to what the website offers, from the learning points about covid, to the quiz, to the stats page.
 ### Learn page
+* Learning points about covid-19, good practices to prevent contracting the disease.
+* Interactive fun fact boxes that users can click on to learn extra facts about covid
 ### Quiz page
+* Interactive quiz game
 ### Stats page
+* Interactive map and global stats
 
 ## [4] Testing
 
