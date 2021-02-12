@@ -79,7 +79,7 @@ Colors aim to suggest fun for the kids.
 ## [6] Credits
 ### Content
 * The info for the learn.html was copied and paraphrased from [Johns Hopkins Medicine's](https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus) website, another page from [Johns Hopkins Medicine's](https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus/how-can-i-protect-myself-from-coronavirus) website and [World Health Organization's](https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19) website.
-
+* The info for the learn.html section "What happens if I get it?" was taken from [Kids National Geographic's](https://kids.nationalgeographic.com/explore/science/facts-about-coronavirus/) website.
 ### Images
 * The covid.jpg image was taken from https://www.forbes.com/sites/victoriaforster/2020/04/02/there-is-a-coronavirus-coloring-book-designed-to-help-children-cope-with-the-pandemic/?sh=22bdf8c33ca5
 * The cough.jpg image was taken from https://depositphotos.com/88981330/stock-illustration-coughing-woman-cartoon-vector-illustration.html
