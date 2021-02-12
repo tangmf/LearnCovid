@@ -27,3 +27,9 @@ $('#shown5').click(function(){
     $('#shown5').hide();
     $('#hidden5').show();
 })
+
+$('#hidden6').hide();
+$('#shown6').click(function(){
+    $('#shown6').hide();
+    $('#hidden6').show();
+})
