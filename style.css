@@ -254,4 +254,15 @@ aside{
     #map{
         width: 100%;
     }
+    #thinking_lottie{
+        display: none;
+        margin: none;
+    }
+    #thinking_person{
+        margin: 5%;
+    }
+    #instructions{
+        width: 100%;
+        font-size: 20px;
+    }
 }
