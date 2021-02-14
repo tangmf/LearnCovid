@@ -92,6 +92,8 @@ Colors aim to suggest fun for the kids.
 * The sneeze.jpg image was taken from https://depositphotos.com/vector-images/sneeze.html?qview=54165171
 * The fever.jpg image was taken from https://depositphotos.com/vector-images/fever.html?qview=63306837
 * The fatigue.jpg image was taken from https://www.samatters.com/tired-brains-and-situational-awareness/
+* The rest.png image was taken from https://www.vecteezy.com/vector-art/1133007-stay-home-quarantine-with-boy-sick-in-bed
+* The vaccine.jpg image was taken from https://www.todayonline.com/singapore/covid-19-vaccines-what-happening-right-now-their-progress
 ### Acknowledgements
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
