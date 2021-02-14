@@ -32,6 +32,7 @@ body{
 
 #infographic_img{
     padding: 3% 3%;
+    padding-top: 0;
     align-self: center;
     width: 50%;
 }
@@ -80,7 +81,7 @@ section{
     border-radius: 15px;
     padding: 3% 3%;
     height: 80%;
-    background-color: #d6d6d6;
+    background-color: whitesmoke;
     box-shadow: 0 9px #999;
     
 }

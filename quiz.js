@@ -89,7 +89,7 @@ let questions = [
     },
     {
         // question 9
-        question: 'What does the Coronavirus appear to have?',
+        question: 'What does the word "corona" in Coronavirus refers to?',
         choice1: 'A shirt',
         choice2: 'A cap',
         choice3: 'Sunglasses',
