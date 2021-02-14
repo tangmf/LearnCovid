@@ -203,14 +203,8 @@ aside{
         font-size: 70%;
     }
 
+    /* learn page */
     li{
-        font-size: 70%;
-    }
-    
-    .menu_option{
-        height: 120px;
-    }
-    h5{
         font-size: 70%;
     }
     
@@ -219,6 +213,22 @@ aside{
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
+
+    .learn-lotties{
+        width: 200px;
+        height: 200px;
+
+    }
+
+    /* stats page */
+    .menu_option{
+        height: 120px;
+    }
+    h5{
+        font-size: 70%;
+    }
+    
+    
     .map_container{
         display: flex;
         flex-direction: column;
