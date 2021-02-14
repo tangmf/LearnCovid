@@ -16,6 +16,27 @@ body{
     background-color: #6AD9D9;
 }
 
+.row_container{
+    display: flex;
+    flex-direction: row;
+    margin: 4%;
+}
+
+.row_container .content_container{
+    width: 50%;
+    margin: 1%;
+}
+.row_container div{
+    width: 50%;
+}
+
+#infographic_img{
+    padding: 3% 3%;
+    padding-top: 0;
+    align-self: center;
+    width: 50%;
+}
+
 footer{
     z-index: 1;
     bottom: 0;
@@ -60,7 +81,7 @@ section{
     border-radius: 15px;
     padding: 3% 3%;
     height: 80%;
-    background-color: #d6d6d6;
+    background-color: whitesmoke;
     box-shadow: 0 9px #999;
     
 }
@@ -102,11 +123,15 @@ section{
 }
 /* Menu page */
 .content_container{
+    display: flex;
+    flex-direction: column;
     border-radius: 15px;
     padding: 3% 3%;
     background-color: #F6454F;
     box-shadow: 0 9px #999;
     color: white;
+    padding-bottom: 100px;
+    position: relative;
 }
 /* Stats page */
 
@@ -181,6 +206,8 @@ section{
 
 .content_container3{
     display: flex;
+    align-self: center;
+    width: 80%;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
@@ -189,6 +216,8 @@ section{
     background-color: #FFD503;
     box-shadow: 0 9px #999;
     color: white;
+    position: absolute;
+    bottom: 10px;
 }
 
 aside{
@@ -235,5 +264,16 @@ aside{
     }
     #map{
         width: 100%;
+    }
+    #thinking_lottie{
+        display: none;
+        margin: none;
+    }
+    #thinking_person{
+        margin: 5%;
+    }
+    #instructions{
+        width: 100%;
+        font-size: 20px;
     }
 }
