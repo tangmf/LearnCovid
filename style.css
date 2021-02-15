@@ -274,7 +274,7 @@ aside{
     }
     #thinking_lottie{
         display: none;
-        margin: none;
+        margin: 0;
     }
     #thinking_person{
         margin: 5%;
