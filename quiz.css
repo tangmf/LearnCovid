@@ -162,13 +162,17 @@ input::placeholder{
         width: 100%;
         font-size: 20px;
     }
-    
+
     .btn{
         width: 100%;
         font-size: 20px;
     }
 
     .fa-crown{
+        font-size: 20px;
+    }
+
+    .fa-home{
         font-size: 20px;
     }
 }
