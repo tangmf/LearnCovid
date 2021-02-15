@@ -6,7 +6,7 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 const healthBarFull = document.querySelector('#healthBarFull');
-const healthText = document.querySelector('#health')
+const healthText = document.querySelector('#health');
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -106,19 +106,23 @@ let questions = [
         answer: '2',
     },
     
-]
+];
 
 const SCORE_POINTS = 100;
 const HEALTH_POINTS = 2;
 const MAX_QUESTIONS = 10;
 var health = 20;
+var startGame;
+var getNewQuestion;
+var decrementHealth;
+var incrementScore;
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
-}
+};
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
@@ -139,12 +143,12 @@ getNewQuestion = () => {
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
-    })
+    });
 
     availableQuestions.splice(questionsIndex, 1);
 
     acceptingAnswers = true;
-}
+};
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -169,22 +173,22 @@ choices.forEach(choice => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
 
-        }, 1000)
+        }, 1000);
 
 
-    })
-})
+    });
+});
 
 decrementHealth = num => {
     
     health -= num;
     healthText.innerText = `COVID HP: ${health}/20`;
 
-}
+};
 incrementScore = num => {
     score +=num;
     scoreText.innerText = score;
-}
+};
 
 
 startGame();
