@@ -117,7 +117,11 @@
     #question{
         font-size: 20px;
     }
-    
+    .choice-container{
+        width: 100%;
+        font-size: 20px;
+        min-width: 100%;
+    }
     .choice-text{
         width: 100%;
         font-size: 15px;
