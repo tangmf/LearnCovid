@@ -88,7 +88,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         for (i=0;i<response.Countries.length;i++){
           if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase()) && inputCountry.length > 3){ // non case-sensitive feature
             outputCount ++;
-            // missing validation for when multiple records meet the requirements
             console.log("found");
             let countryName = response.Countries[i].Country;
             let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
@@ -168,7 +167,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                          
                          }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 100000 && document.getElementById("yellow").checked){
+                      else if (storedCountries[i].TotalConfirmed <= 100000 && storedCountries[i].TotalConfirmed > 10000 && document.getElementById("yellow").checked){
                           var marker = new mapboxgl.Marker({color: 'yellow'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
@@ -181,7 +180,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                          
                          }
                       }
-                      else if (storedCountries[i].TotalConfirmed <= 1000000 && document.getElementById("orange").checked){
+                      else if (storedCountries[i].TotalConfirmed <= 1000000 && storedCountries[i].TotalConfirmed > 100000 && document.getElementById("orange").checked){
                           var marker = new mapboxgl.Marker({color: 'orange'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
                           .addTo(map);
@@ -216,20 +215,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
           }
           $(".map_container").show();
           $(".map_loading").hide();
-          /*
-          for (i=0;i<data.ref_country_codes.length;i++){
-              console.log(data.ref_country_codes[i].country);
-              
-              var marker = new mapboxgl.Marker()
-              .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
-              .addTo(map);
-              
-              var popup = new mapboxgl.Popup()
-              .setLngLat([data.ref_country_codes[i].longitude, data.ref_country_codes[i].latitude])
-              .setHTML(`<div id = "popup">${data.ref_country_codes[i].country}</div>`)
-              .addTo(map);
-          }
-          */
   
       });
   }
