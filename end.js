@@ -9,6 +9,10 @@ var saveHighScore;
 
 finalScore.innerText = `Score: ${mostRecentScore}`;
 
+if (mostRecentScore == 1000){
+    document.querySelector('#end-text').innerText = "You defeated the virus! Enter your name to save your score!";
+}
+
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
 });
