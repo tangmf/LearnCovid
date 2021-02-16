@@ -30,6 +30,10 @@ body{
     width: 50%;
 }
 
+.lottie{
+    width: 200px;
+}
+
 #infographic_img{
     padding: 3% 3%;
     padding-top: 0;
@@ -282,5 +286,17 @@ aside{
     #instructions{
         width: 100%;
         font-size: 20px;
+    }
+    .row_container div{
+        width: 100%;
+    }
+    .row_container{
+        flex-direction: column;
+    }
+    .row_container .content_container{
+        width: 100%;
+    }
+    .lottie{
+        width: 70px;
     }
 }
