@@ -22,31 +22,21 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
       $(".map_container").hide();
       loadAPI();
       /* get current position, setup map when successful */
-      navigator.geolocation.getCurrentPosition(successLocation, errorLocation,
-        {
-          enableHighAccuracy: true
-        });
+      setupMap();
       $("#search_btn").click(function () {
         $("#search_output").text("");
         $(".search_loading").show();
         search();
       });
-      $("#popup_btn").click(function (){
-        toggle_popup(map);
-      });
       $("#apply_btn").click(function(){
-        event.preventDefault()
-        navigator.geolocation.getCurrentPosition(successLocation, errorLocation,
-          {
-            enableHighAccuracy: true
-          });
+        event.preventDefault();
+        setupMap();
       });
   });
 
   // function that loads api and outputs data to the page
   function loadAPI(){
     $.ajax(settings).done(function (response) {
-        console.log(response);
         
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
@@ -75,9 +65,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
     $("#search_multiple").empty();
     $("#search_multiple").hide();
     let inputCountry = $("#search_input").val();
-    if(inputCountry == ""){
+    if(inputCountry === ""){
       $("#search_output").show();
-      $("#search_output").html(`<p>Enter something!</p>`) // input is empty
+      $("#search_output").html(`<p>Enter something!</p>`); // input is empty
       $(".search_loading").hide();
     }
     else{
@@ -95,7 +85,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
             let countryTotalRecovered = response.Countries[i].TotalRecovered;
             outputList.push(countryName);
             $("#search_output").show();
-            $("#search_output").html(`<p><b>${countryName}</b></p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`)
+            $("#search_output").html(`<p><b>${countryName}</b></p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`);
           }
         }
         if (outputCount > 1){
@@ -106,7 +96,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
             $("#search_multiple").append(outputList[i] + " , ");
           }
         }
-        else if(outputCount == 0){
+        else if(outputCount === 0){
           $("#search_output").show();
             console.log("Country not found");
             $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
@@ -118,16 +108,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
   }
 
 // Map functions
-
-  function successLocation(position) {
-    /* Hide notice when location is found */
-    setupMap();
-    
-  }
-  
-  function errorLocation() { }{
-      console.log("error location");
-  }
   
   function setupMap(){
       const map = new mapboxgl.Map({
