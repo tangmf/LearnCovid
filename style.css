@@ -169,6 +169,12 @@ section{
 #apply_btn{
     margin: 3%;
     padding: 3% 3%;
+    border-radius: 15px;
+}
+
+#apply_btn:hover{
+    background-color: #F6454F;
+    color: white;
 }
 
 .column{
