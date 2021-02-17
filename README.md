@@ -4,9 +4,10 @@ ID Assignment 3
 # Documentation
 ### Group members: Tang Ming Feng, Josiah Low
 ### Covid information website for kids
-Note: derpsnow == Tang Ming Feng
-The Home page (index.html) and Stats page (stats.html) was done by Tang Ming Feng.
-The Learn page (learn.html) and Quiz page (quiz.html) was done by Josiah Low.
+Note: 
+* derpsnow == Tang Ming Feng
+* The Home page (index.html) and Stats page (stats.html) was done by Tang Ming Feng.
+* The Learn page (learn.html) and Quiz page (quiz.html) was done by Josiah Low.
 ## Table of Contents
 - [1] Purpose
 - [2] Design Process
