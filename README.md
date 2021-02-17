@@ -5,7 +5,8 @@ ID Assignment 3
 ### Group members: Tang Ming Feng, Josiah Low
 ### Covid information website for kids
 Note: derpsnow == Tang Ming Feng
-
+The Home page (index.html) and Stats page (stats.html) was done by Tang Ming Feng.
+The Learn page (learn.html) and Quiz page (quiz.html) was done by Josiah Low.
 ## Table of Contents
 - [1] Purpose
 - [2] Design Process
@@ -97,7 +98,6 @@ Colors aim to suggest fun for the kids.
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
 * Quiz Youtube Tutorial by: [brain design](https://www.youtube.com/watch?v=f4fB9Xg2JEY)
-* Lottie (thinking) from [https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_pyiyoyxf.json]
 * All Lotties taken from [Lottie Files](https://lottiefiles.com/)
 
 
