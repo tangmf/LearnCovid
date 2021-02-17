@@ -44,10 +44,11 @@ The website caters for kids to have a fun, interactive and educational experienc
 Colors aim to suggest fun for the kids.
 
 ### Link to Github Pages
-[github page](https://tangmf.github.io/Assignment3/index.html)
+[Github page](https://tangmf.github.io/Assignment3/index.html)
 ### Link to wireframe
-[wireframe](https://xd.adobe.com/view/e48bed14-6759-4774-a639-ef4d500fa037-b1d8/?fullscreen)
-
+[Wireframe](https://xd.adobe.com/view/e48bed14-6759-4774-a639-ef4d500fa037-b1d8/?fullscreen)
+### Link to Google Drive Pitch Video
+[Pitch Video](https://drive.google.com/file/d/15bp6Cbh0dqc8DDNETJmgZk3EJSwR7VTV/view?usp=sharing)
 ### User stories
 
 
