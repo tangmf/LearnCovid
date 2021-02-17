@@ -1,4 +1,4 @@
-// // code was taken from https://youtu.be/f4fB9Xg2JEY
+// code was taken from https://youtu.be/f4fB9Xg2JEY
 
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));

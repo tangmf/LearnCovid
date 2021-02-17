@@ -1,3 +1,4 @@
+// for fun fact interactivity
 $('#hidden').hide();
 $('#shown').click(function(){
     $('#shown').hide();
