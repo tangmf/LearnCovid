@@ -15,19 +15,25 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
 
   // Document Ready
   $(document).ready(function (){
+    // hide icons and loading lotties
       $(".global_stats_icon").hide();
       $(".search_loading").hide();
       $("#search_multiple").hide();
       $("#search_output").hide();
       $(".map_container").hide();
-      loadAPI();
-      /* get current position, setup map when successful */
-      setupMap();
+      // load apis
+      loadAPI(); //load covid19 api
+      setupMap(); // load mapbox api
+      // if user searches for specific country
       $("#search_btn").click(function () {
+        // reset output
         $("#search_output").text("");
+        // show loading lotties
         $(".search_loading").show();
+        // search for input
         search();
       });
+      // apply changes to map settings
       $("#apply_btn").click(function(){
         event.preventDefault();
         setupMap();
@@ -37,7 +43,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
   // function that loads api and outputs data to the page
   function loadAPI(){
     $.ajax(settings).done(function (response) {
-        
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
         $("#newConfirmed_output").text("New Confirmed: " + newConfirmed);
@@ -51,8 +56,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         $("#newRecovered_output").text("New Recovered: " + newRecovered);
         let totalRecovered = response.Global.TotalRecovered;
         $("#totalRecovered_output").text("Total Recovered: " + totalRecovered);
+        // finished loading
         $(".global_stats_loading").hide();
         $(".global_stats_icon").show();
+        // save data to local storage for mapbox api
         var countryList = [];
         for (i=0;i<response.Countries.length;i++){
           countryList.push(response.Countries[i]);
@@ -62,19 +69,23 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
       });
   }
   function search(){
+    // clear search_multiple
     $("#search_multiple").empty();
     $("#search_multiple").hide();
-    let inputCountry = $("#search_input").val();
+    let inputCountry = $("#search_input").val(); // target country
+    // validation for when there is no input
     if(inputCountry === ""){
       $("#search_output").show();
       $("#search_output").html(`<p>Enter something!</p>`); // input is empty
       $(".search_loading").hide();
     }
+    // when there is input
     else{
       $.ajax(settings).done(function (response) {
         var i;
-        let outputList = [];
+        let outputList = []; // list for all outputs
         let outputCount = 0;
+        // search trhough the api
         for (i=0;i<response.Countries.length;i++){
           if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase()) && inputCountry.length > 3){ // non case-sensitive feature
             outputCount ++;
@@ -83,11 +94,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
             let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
             let countryTotalDeaths = response.Countries[i].TotalDeaths;
             let countryTotalRecovered = response.Countries[i].TotalRecovered;
-            outputList.push(countryName);
+            outputList.push(countryName); // add all outputs to output list
+            // display search output
             $("#search_output").show();
             $("#search_output").html(`<p><b>${countryName}</b></p><p>Cases: ${countryTotalConfirmed}</p><p>Total Deaths: ${countryTotalDeaths}</p><p>Total Recovered: ${countryTotalRecovered}</p>`);
           }
         }
+        // multiple outputs
         if (outputCount > 1){
           $("#search_output").show();
           $("#search_multiple").show();
@@ -96,12 +109,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
             $("#search_multiple").append(outputList[i] + " , ");
           }
         }
+        // no outputs (nothing found)
         else if(outputCount === 0){
           $("#search_output").show();
             console.log("Country not found");
             $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
         }
-        
+        // finish loading
         $(".search_loading").hide();
       });
     }
@@ -112,21 +126,16 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
   function setupMap(){
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        zoom: 0
+        style: 'mapbox://styles/mapbox/streets-v11'
       });
     const nav = new mapboxgl.NavigationControl();
-    
     /* Add navigation */
     map.addControl(nav);
-    
-  
     // read data from json file
     let url = "country-codes-lat-long-alpha3.json";
       fetch(url)
       .then(response => response.json())
       .then(function(data){
-  
           /* get stats for each country from local storage */
           var storedCountries = JSON.parse(localStorage.getItem("Countries"));
           /* loop through country stats and country coordinates. if country code is the same, means there are covid cases, and show it on the map. */
@@ -193,6 +202,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
               }
               
           }
+          //finish loading
           $(".map_container").show();
           $(".map_loading").hide();
   
