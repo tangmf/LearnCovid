@@ -70,11 +70,13 @@ Lotties are used to provide more dynamism to the website, especially because the
 * Introduction to what the website offers, from the learning points about covid, to the quiz, to the stats page.
 ### Learn page
 * Learning points about covid-19, good practices to prevent contracting the disease.
+* Infographics and images
 * Interactive fun fact boxes that users can click on to learn extra facts about covid
 ### Quiz page
 * Interactive quiz game
 * Highscore system, where top 5 scores will be displayed on the leaderboards page using local storage
 * Goal of quiz game is to defeat the enemy covid, which weakens in HP everytime the user gets a correct answer.
+* Gamification feel due to needing to defeat an enemy
 ### Stats page
 * Global statistics (confirmed cases, deaths and recovered)
 * Search statistics by Country
@@ -96,6 +98,15 @@ Lotties are used to provide more dynamism to the website, especially because the
 * iv) Click Apply changes 
 * v) The map updates according to the settings
 * vi) The user can interact with the map, and navigate through the different countries
+
+### 3) Quiz game
+* i) Go to quiz page via navbar or homepage menu
+* ii) Click on "Play" to start game or "Highscores" to view the leaderboard.
+* iii) After clicking "Play", the game starts and an enemy covid will spawn, and you will be prompted to answer a question with 4 choices.
+* iv) Clicking on the right answer adds 100 points and hits the covid enemy for 2hp, and you progress to the next question (total 10 questions).
+* v) Defeating the covid enemy (getting all questions correct) will have a special ending screen saying that you defeated the virus
+* vi) You will be prompted to save your highscore. If you want to, just enter in your name and click save.
+* vii) The highscore will appear on the leaderboards.
 
 
 ## [5] Technologies used
