@@ -9,7 +9,7 @@ var settings = {
     },
   };
 
-/* Map settings most code is obtained from youtube tutorial https://www.youtube.com/watch?v=OySigNMXOZU*/
+/* Map settings some code is obtained from youtube tutorial https://www.youtube.com/watch?v=OySigNMXOZU*/
 mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkyemxseDB6MXk2d24ifQ.I36uKUemWbTsCzrKk_SmHQ';
 
 
@@ -143,6 +143,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
               for (j=0;j<data.ref_country_codes.length;j++){
                   if(data.ref_country_codes[j].alpha2 == storedCountries[i].CountryCode){
                       // Total Confirmed: 10k:green, 100k:yellow, 1000k:orange, higher:red
+                      //green
                       if (storedCountries[i].TotalConfirmed <= 10000 && document.getElementById("green").checked){
                           var marker = new mapboxgl.Marker({color: 'green'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
@@ -156,6 +157,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                          
                          }
                       }
+                      //yellow
                       else if (storedCountries[i].TotalConfirmed <= 100000 && storedCountries[i].TotalConfirmed > 10000 && document.getElementById("yellow").checked){
                           var marker = new mapboxgl.Marker({color: 'yellow'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
@@ -169,6 +171,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                          
                          }
                       }
+                      //orange
                       else if (storedCountries[i].TotalConfirmed <= 1000000 && storedCountries[i].TotalConfirmed > 100000 && document.getElementById("orange").checked){
                           var marker = new mapboxgl.Marker({color: 'orange'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
@@ -182,6 +185,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                          
                          }
                       }
+                      //red
                       else if (storedCountries[i].TotalConfirmed > 1000000 && document.getElementById("red").checked){
                           var marker = new mapboxgl.Marker({color: 'red'})
                           .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])

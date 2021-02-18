@@ -108,10 +108,10 @@ let questions = [
     
 ];
 
-const SCORE_POINTS = 100;
-const HEALTH_POINTS = 2;
+const SCORE_POINTS = 100; //points for question correct
+const HEALTH_POINTS = 2; //Damage done to covid enemy for question correct
 const MAX_QUESTIONS = 10;
-var health = 20;
+var health = 20; //covid enemy total health
 var startGame;
 var getNewQuestion;
 var decrementHealth;
@@ -120,11 +120,13 @@ var incrementScore;
 startGame = () => {
     questionCounter = 0;
     score = 0;
+    // set all questions to be available
     availableQuestions = [...questions];
     getNewQuestion();
 };
 
 getNewQuestion = () => {
+    // no more questions (end game)
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 
@@ -132,38 +134,41 @@ getNewQuestion = () => {
     }
 
     questionCounter++;
+    // update progress bar
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
     
-    
+    // Get random question from available questions
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
-
+    // set choices
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
     });
 
-    availableQuestions.splice(questionsIndex, 1);
-
+    availableQuestions.splice(questionsIndex, 1); // replaces 1 element at questionsIndex with nothing (remove question)
+    // accept answers
     acceptingAnswers = true;
 };
 
+// eventListener for each choice
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
+        // not accepting answers
         if(!acceptingAnswers) return;
 
-        acceptingAnswers = false;
+        acceptingAnswers = false; // after click, do not allow user to change answer
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'correct') {
-            
+            // correct answer to question (enemy take damage, score increases)
             decrementHealth(HEALTH_POINTS);
-            healthBarFull.style.width = `${(health/20) * 100}%`;
+            healthBarFull.style.width = `${(health/20) * 100}%`; // update hp bar for enemy
             incrementScore(SCORE_POINTS);
         }
         
@@ -178,7 +183,6 @@ choices.forEach(choice => {
 
     });
 });
-
 decrementHealth = num => {
     
     health -= num;
