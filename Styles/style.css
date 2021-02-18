@@ -147,6 +147,9 @@ section{
 #search_output{
     border-radius: 15px;
     padding: 3% 3%;
+    border: 1px solid black;
+    background-color: red;
+    color: white;
 }
 #search_multiple{
     color: red;
