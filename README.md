@@ -42,7 +42,10 @@ The website caters for kids to have a fun, interactive and educational experienc
 
 ## [2] Design Process
 
-Colors aim to suggest fun for the kids.
+Colors used are targeted at children. Color scheme is taken from https://color.adobe.com/Kids-Website-Color-Scheme--color-theme-8124669/
+
+Lotties are used to provide more dynamism to the website, especially because the website is targeted at children.
+
 
 ### Link to Github Pages
 [Github page](https://tangmf.github.io/Assignment3/index.html)
@@ -66,11 +69,29 @@ Colors aim to suggest fun for the kids.
 * Interactive fun fact boxes that users can click on to learn extra facts about covid
 ### Quiz page
 * Interactive quiz game
+* Highscore system, where top 5 scores will be displayed on the leaderboards page using local storage
+* Goal of quiz game is to defeat the enemy covid, which weakens in HP everytime the user gets a correct answer.
 ### Stats page
-* Interactive map and global stats
+* Global statistics (confirmed cases, deaths and recovered)
+* Search statistics by Country
+* Interactive map, where the user can change the map settings
 
 ## [4] Testing
 
+### 1) Search by country feature
+* i) Go to stats page via navbar or homepage menu
+* ii) Scroll down to search by country section
+* iii) Input the country name in the textbox (not case sensitive) and click search
+* iv) Loading text and lottie appears, and once the page has taken the info from the api, it displays the country stats below.
+* v) If there are, related countries will appear above.
+
+### 2) Interactive Map
+* i) Go to stats page via navbar or homepage menu
+* ii) Scroll down to the map
+* iii) Change the settings according to your liking
+* iv) Click Apply changes 
+* v) The map updates according to the settings
+* vi) The user can interact with the map, and navigate through the different countries
 
 
 ## [5] Technologies used
