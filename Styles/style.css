@@ -247,6 +247,25 @@ aside{
     justify-content: space-evenly;
 }
 
+#quizBtn_section{
+    background-color:#F6454F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#quiz_btn{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 3% 3%;
+    font-size: 20px;
+}
+
+#quiz_btn:hover{
+    font-weight: bolder;
+    color: white;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 800px) {
