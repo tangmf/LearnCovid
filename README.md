@@ -1,16 +1,15 @@
-# Assignment3
-ID Assignment 3
-
-# Documentation
-### Group members: Tang Ming Feng, Josiah Low
-### Covid information website for kids
-Note: 
+# Assignment3 Documentation
+ID Assignment 3 : Covid information website for kids
+Group members: Tang Ming Feng, Josiah Low
+Note:
 * derpsnow == Tang Ming Feng
+
 ## Contributions
 ### Tang Ming Feng
 * The Home page (index.html) and Stats page (stats.html), along with all css and js involved.
 ### Josiah Low
 * The Learn page (learn.html) and Quiz page (quiz.html), along with all css and js involved.
+
 ## Table of Contents
 - [1] Purpose
 - [2] Design Process
@@ -56,7 +55,9 @@ Lotties are used to provide more dynamism to the website, especially because the
 [Wireframe](https://xd.adobe.com/view/e48bed14-6759-4774-a639-ef4d500fa037-b1d8/?fullscreen)
 ### Link to Google Drive Pitch Video
 [Pitch Video](https://drive.google.com/file/d/15bp6Cbh0dqc8DDNETJmgZk3EJSwR7VTV/view?usp=sharing)
+
 ### User stories
+* As a kid, I want to learn more about about covid-19. I would need to navigate to the learn page via the navbar or the homepage menu. As there are simple instructions at the homepage menu, I know which buttons will lead to the learn page, as well as get an idea of what the website offers (quiz and stats). After clicking on the learn option in the homepage menu, I will be redirected to the learn page, where I can scroll through the different sections of content. I can also click the fun fact boxes to learn more about covid-19. After reading through, when I feel like I have learnt something, I can go to the quiz page via the navbar, the homepage menu, or the button below the learn page. At the quiz page, I can test my knowledge through the 10 questions, and try my best to get all the questions correct to beat the covid-19 enemy and get a highscore. I can then save my highscore with my name on it. After that, if I want to explore more, I can go to the stats page and play around with the interactive map, or learn more about the global statistics or even learn about my own country's statistics via the search by country section.
 
 
 ## [3] Features
