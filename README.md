@@ -6,9 +6,11 @@ Note:
 
 ## Contributions
 ### Tang Ming Feng
-* The Home page (index.html) and Stats page (stats.html), along with all css and js involved.
+* API developer
+* Did the Home page (index.html) and Stats page (stats.html), along with all css and js involved.
 ### Josiah Low
-* The Learn page (learn.html) and Quiz page (quiz.html), along with all css and js involved.
+* Game and front-end developer
+* DId the Learn page (learn.html) and Quiz page (quiz.html), along with all css and js involved.
 
 ## Table of Contents
 - [1] Purpose
