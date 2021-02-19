@@ -139,6 +139,8 @@ The quiz is gamified, making taking the quiz more engaging and fun. In addition,
 * The vaccine.jpg image was taken from https://www.todayonline.com/singapore/covid-19-vaccines-what-happening-right-now-their-progress
 * The infographic.jpg image was taken from https://www.medscape.com/slideshow/covid-19-infographics-6012689
 ### Acknowledgements
+* Postman covid api: https://documenter.getpostman.com/view/10808728/SzS8rjbc
+* mapbox api: https://docs.mapbox.com/
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
 * Quiz Youtube Tutorial by: [brain design](https://www.youtube.com/watch?v=f4fB9Xg2JEY)
