@@ -24,31 +24,28 @@ Note:
 ## [1] Purpose
 
 ### User audience: 
-Young kids and parents.
-
+Young kids or students.
 
 ### Intent:
 Make young kids more aware and knowledgable of the virus, and take up good practices and habits to avoid contracting the virus.
 
-
 ### Purpose:
-Make kids take up good practices and habits to avoid contracting the virus and staying safe.
-
+Make kids take up good practices and habits to avoid contracting the virus and staying safe, as well as give them a worldview of how covid has affected the world
 
 ### Who the website is catering for and value it provides for users:
 Kids: Fun interactive experience that is also educational.
 Parents: Help their child be more aware of the situation, while having fun.
 
-
 ### What is the website catering for?
-The website caters for kids to have a fun, interactive and educational experience learning about world issues like covid, making them more aware.
-
+The website caters for kids to have a fun, interactive and educational experience learning about world issues like covid, making them more aware
 
 ## [2] Design Process
 
 Colors used are targeted at children. Color scheme is taken from https://color.adobe.com/Kids-Website-Color-Scheme--color-theme-8124669/
-
 Lotties are used to provide more dynamism to the website, especially because the website is targeted at children.
+Images used are kid friendly and aimed to give the kids visual understanding of the content.
+Sections borders have rounded edges to make the website more friendly, and they have shadows to make the sections pop out.
+The quiz is gamified, making taking the quiz more engaging and fun. In addition, there is a highscore system, to make the kids proud of their new gained knowledge.
 
 
 ### Link to Github Pages
@@ -58,8 +55,13 @@ Lotties are used to provide more dynamism to the website, especially because the
 ### Link to Google Drive Pitch Video
 [Pitch Video](https://drive.google.com/file/d/15bp6Cbh0dqc8DDNETJmgZk3EJSwR7VTV/view?usp=sharing)
 
-### User stories
-* As a kid, I want to learn more about about covid-19. I would need to navigate to the learn page via the navbar or the homepage menu. As there are simple instructions at the homepage menu, I know which buttons will lead to the learn page, as well as get an idea of what the website offers (quiz and stats). After clicking on the learn option in the homepage menu, I will be redirected to the learn page, where I can scroll through the different sections of content. I can also click the fun fact boxes to learn more about covid-19. After reading through, when I feel like I have learnt something, I can go to the quiz page via the navbar, the homepage menu, or the button below the learn page. At the quiz page, I can test my knowledge through the 10 questions, and try my best to get all the questions correct to beat the covid-19 enemy and get a highscore. I can then save my highscore with my name on it. After that, if I want to explore more, I can go to the stats page and play around with the interactive map, or learn more about the global statistics or even learn about my own country's statistics via the search by country section.
+### User story
+* As a kid, I want to learn more about about covid-19. I would need to navigate to the learn page via the navbar or the homepage menu. 
+* As there are simple instructions at the homepage menu, I know which buttons will lead to the learn page, as well as get an idea of what the website offers (quiz and stats). 
+* After clicking on the learn option in the homepage menu, I will be redirected to the learn page, where I can scroll through the different sections of content. 
+* I can also click the fun fact boxes to learn more about covid-19. After reading through, when I feel like I have learnt something, I can go to the quiz page via the navbar, the homepage menu, or the button below the learn page. 
+* At the quiz page, I can test my knowledge through the 10 questions, and try my best to get all the questions correct to beat the covid-19 enemy and get a highscore. I can then save my highscore with my name on it. 
+* After that, if I want to explore more, I can go to the stats page and play around with the interactive map, or learn more about the global statistics or even learn about my own country's statistics via the search by country section.
 
 
 ## [3] Features
@@ -67,6 +69,7 @@ Lotties are used to provide more dynamism to the website, especially because the
 ### All pages
 * All pages have a responsive navigation bar made using bootstrap that is set to the top of the screen.
 * All pages are responsive.
+* Use of lotties
 ### Home page
 * Interactive menu that the user can interact with
 * Introduction to what the website offers, from the learning points about covid, to the quiz, to the stats page.
@@ -82,7 +85,7 @@ Lotties are used to provide more dynamism to the website, especially because the
 ### Stats page
 * Global statistics (confirmed cases, deaths and recovered)
 * Search statistics by Country
-* Interactive map, where the user can change the map settings
+* Interactive map, where the user can change the map settings to their liking
 
 ## [4] Testing
 
@@ -134,6 +137,7 @@ Lotties are used to provide more dynamism to the website, especially because the
 * The fatigue.jpg image was taken from https://www.samatters.com/tired-brains-and-situational-awareness/
 * The rest.png image was taken from https://www.vecteezy.com/vector-art/1133007-stay-home-quarantine-with-boy-sick-in-bed
 * The vaccine.jpg image was taken from https://www.todayonline.com/singapore/covid-19-vaccines-what-happening-right-now-their-progress
+* The infographic.jpg image was taken from https://www.medscape.com/slideshow/covid-19-infographics-6012689
 ### Acknowledgements
 * Bootstrap: https://repl.it/@mingfeng/wk08-simple-bootstrap#index.html
 * Country coordinate and code json file is taken from [eesur's github repo](https://github.com/eesur/country-codes-lat-long)
