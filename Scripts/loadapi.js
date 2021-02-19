@@ -89,7 +89,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         for (i=0;i<response.Countries.length;i++){
           if((response.Countries[i].Country).toLowerCase().includes($("#search_input").val().toLowerCase()) && inputCountry.length > 3){ // non case-sensitive feature
             outputCount ++;
-            console.log("found");
             let countryName = response.Countries[i].Country;
             let countryTotalConfirmed = response.Countries[i].TotalConfirmed;
             let countryTotalDeaths = response.Countries[i].TotalDeaths;
@@ -112,7 +111,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
         // no outputs (nothing found)
         else if(outputCount === 0){
           $("#search_output").show();
-            console.log("Country not found");
             $("#search_output").html(`<p>"${inputCountry}" not found</p>`);
         }
         // finish loading
@@ -152,7 +150,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                             // popup for the coordiante
                            var popup = new mapboxgl.Popup()
                            .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</p></div>`)
                            .addTo(map);
                          
                          }
@@ -166,7 +164,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                             // popup for the coordiante
                            var popup = new mapboxgl.Popup()
                            .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</p></div>`)
                            .addTo(map);
                          
                          }
@@ -180,7 +178,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                             // popup for the coordiante
                            var popup = new mapboxgl.Popup()
                            .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</p></div>`)
                            .addTo(map);
                          
                          }
@@ -194,7 +192,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
                             // popup for the coordiante
                            var popup = new mapboxgl.Popup()
                            .setLngLat([data.ref_country_codes[j].longitude, data.ref_country_codes[j].latitude])
-                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</div>`)
+                           .setHTML(`<div id = "popup"><p>${data.ref_country_codes[j].country}</p><p>Total Confirmed: ${storedCountries[i].TotalConfirmed}</p></div>`)
                            .addTo(map);
                          
                          }
