@@ -51,7 +51,7 @@ The quiz is gamified, making taking the quiz more engaging and fun. In addition,
 ### Link to Github Pages
 [Github page](https://tangmf.github.io/Assignment3/index.html)
 ### Link to wireframe
-[Wireframe](https://xd.adobe.com/view/e48bed14-6759-4774-a639-ef4d500fa037-b1d8/?fullscreen)
+[Wireframe](https://xd.adobe.com/view/e4365a42-472f-49b9-b06b-2514d67c0b9e-b165/)
 ### Link to Google Drive Pitch Video
 [Pitch Video](https://drive.google.com/file/d/15bp6Cbh0dqc8DDNETJmgZk3EJSwR7VTV/view?usp=sharing)
 
