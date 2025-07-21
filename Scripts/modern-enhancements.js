@@ -289,16 +289,14 @@ class QuizEnhancer {
       progressText.parentNode.insertBefore(counterDiv, progressText);
     }
 
-    // Wait for the quiz script to load, then enhance it
-    setTimeout(() => {
-      if (typeof window.getNewQuestion === 'function') {
-        const originalGetNewQuestion = window.getNewQuestion;
-        window.getNewQuestion = () => {
-          originalGetNewQuestion();
-          this.updateQuestionCounter();
-        };
-      }
-    }, 100);
+    // Override the original getNewQuestion function to add explanations
+    if (typeof getNewQuestion === 'function') {
+      const originalGetNewQuestion = getNewQuestion;
+      getNewQuestion = () => {
+        originalGetNewQuestion();
+        this.updateQuestionCounter();
+      };
+    }
 
     // Add explanation after answer selection
     document.querySelectorAll('.choice-container').forEach(choice => {
@@ -312,15 +310,15 @@ class QuizEnhancer {
 
   updateQuestionCounter() {
     const counter = document.getElementById('question-counter');
-    if (counter && typeof window.questionCounter !== 'undefined') {
-      counter.textContent = `Question ${window.questionCounter} of ${window.MAX_QUESTIONS}`;
+    if (counter && typeof questionCounter !== 'undefined') {
+      counter.textContent = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     }
   }
 
   showExplanation() {
-    if (typeof window.questionCounter === 'undefined') return;
+    if (typeof questionCounter === 'undefined') return;
     
-    const explanation = this.explanations[window.questionCounter];
+    const explanation = this.explanations[questionCounter];
     if (!explanation) return;
 
     let explanationDiv = document.getElementById('quiz-explanation');
@@ -382,58 +380,66 @@ class StatsEnhancer {
   }
 
   enhanceGlobalStats() {
-    // Wait for the original loadAPI to be available, then enhance it
-    setTimeout(() => {
-      if (typeof window.loadAPI === 'function') {
-        const originalLoadAPI = window.loadAPI;
-        window.loadAPI = function() {
-          // Call original function first
-          originalLoadAPI();
+    // Override the original loadAPI function to use enhanced styling
+    if (typeof loadAPI === 'function') {
+      const originalLoadAPI = loadAPI;
+      window.loadAPI = function() {
+        $.ajax(settings).done(function (response) {
+          const globalStatsOutput = document.getElementById('global_stats_output');
+          if (globalStatsOutput) {
+            globalStatsOutput.innerHTML = `
+              <div class="stat-card">
+                <div class="stat-number">${response.Global.TotalConfirmed.toLocaleString()}</div>
+                <div class="stat-label">Total Confirmed</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                  +${response.Global.NewConfirmed.toLocaleString()} new
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">${response.Global.TotalRecovered.toLocaleString()}</div>
+                <div class="stat-label">Total Recovered</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                  +${response.Global.NewRecovered.toLocaleString()} new
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">${response.Global.TotalDeaths.toLocaleString()}</div>
+                <div class="stat-label">Total Deaths</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                  +${response.Global.NewDeaths.toLocaleString()} new
+                </div>
+              </div>
+            `;
+          }
           
-          // Then enhance the display after a short delay
-          setTimeout(() => {
-            const globalStatsOutput = document.getElementById('global_stats_output');
-            if (globalStatsOutput && globalStatsOutput.innerHTML.includes('Total Confirmed:')) {
-              // Only enhance if the original content is loaded
-              const content = globalStatsOutput.innerHTML;
-              if (!content.includes('stat-card')) {
-                // Parse the existing content and enhance it
-                const confirmed = content.match(/Total Confirmed: ([\d,]+)/)?.[1] || '0';
-                const newConfirmed = content.match(/New Confirmed: ([\d,]+)/)?.[1] || '0';
-                const recovered = content.match(/Total Recovered: ([\d,]+)/)?.[1] || '0';
-                const newRecovered = content.match(/New Recovered: ([\d,]+)/)?.[1] || '0';
-                const deaths = content.match(/Total Deaths: ([\d,]+)/)?.[1] || '0';
-                const newDeaths = content.match(/New Deaths: ([\d,]+)/)?.[1] || '0';
-                
-                globalStatsOutput.innerHTML = `
-                  <div class="stat-card">
-                    <div class="stat-number">${confirmed}</div>
-                    <div class="stat-label">Total Confirmed</div>
-                    <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                      +${newConfirmed} new
-                    </div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-number">${recovered}</div>
-                    <div class="stat-label">Total Recovered</div>
-                    <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                      +${newRecovered} new
-                    </div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-number">${deaths}</div>
-                    <div class="stat-label">Total Deaths</div>
-                    <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                      +${newDeaths} new
-                    </div>
-                  </div>
-                `;
-              }
-            }
-          }, 1000);
-        };
-      }
-    }, 100);
+          // Continue with original functionality
+          $(".global_stats_loading").hide();
+          $(".global_stats_icon").show();
+          
+          var countryList = [];
+          for (let i = 0; i < response.Countries.length; i++) {
+            countryList.push(response.Countries[i]);
+          }
+          localStorage.setItem("Countries", JSON.stringify(countryList));
+        });
+      };
+    }
+  }
+
+  addCharts() {
+    // Add a simple chart container
+    const chartContainer = document.createElement('div');
+    chartContainer.innerHTML = `
+      <section class="card-modern" style="margin: 20px 5%;">
+        <h3>Global Trends</h3>
+        <canvas id="covidChart" width="400" height="200"></canvas>
+      </section>
+    `;
+    
+    const mapSection = document.getElementById('map-section');
+    if (mapSection) {
+      mapSection.parentNode.insertBefore(chartContainer, mapSection);
+    }
   }
 }
 
