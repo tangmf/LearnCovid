@@ -117,9 +117,15 @@ var getNewQuestion;
 var decrementHealth;
 var incrementScore;
 
+// Make variables global for modern-enhancements.js
+window.questionCounter = questionCounter;
+window.MAX_QUESTIONS = MAX_QUESTIONS;
+window.getNewQuestion = getNewQuestion;
+
 startGame = () => {
     questionCounter = 0;
     score = 0;
+    window.questionCounter = questionCounter;
     // set all questions to be available
     availableQuestions = [...questions];
     getNewQuestion();
@@ -134,6 +140,7 @@ getNewQuestion = () => {
     }
 
     questionCounter++;
+    window.questionCounter = questionCounter;
     // update progress bar
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;

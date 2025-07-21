@@ -42,6 +42,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGFuZ21pbmdmZW5nIiwiYSI6ImNrajQyazEwYzBpeWkye
 
   // function that loads api and outputs data to the page
   function loadAPI(){
+    window.loadAPI = loadAPI; // Make function globally accessible
     $.ajax(settings).done(function (response) {
         /* Global stats */
         let newConfirmed = response.Global.NewConfirmed;
