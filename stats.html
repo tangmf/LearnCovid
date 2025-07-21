@@ -12,7 +12,6 @@
   <!-- Styles -->
   <link rel="stylesheet" href="Styles/normalize.css">
   <link rel="stylesheet" href="Styles/style.css">
-  <link rel="stylesheet" href="Styles/modern-enhancements.css">
   <!-- Mapbox -->
 	<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'>
 	</script>
@@ -52,10 +51,9 @@
   </nav>
 
   <!-- Page -->
-  <main id="main-content">
   <h1>Statistics</h1>
   <!-- global stats section -->
-  <section id="global-stats">
+  <section>
       <h2>Global Statistics</h2>
       <div class = "global_stats_loading">Loading...</div>
       <lottie-player class = "global_stats_loading" src="https://assets3.lottiefiles.com/datafiles/67bae0ddb57b26679d10e9ce7c1d445f/data.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop  autoplay></lottie-player>
@@ -79,13 +77,13 @@
       </div>
   </section>
 
-    <section id="search-by-country">
+    <section>
         <h2>Search by Country</h2>
         <div id = "search_bar">
             <!-- Search bar -->
             <label>Enter country:</label>
-            <input type = "text" id = "search_input" aria-label="Enter country name">
-            <button id = "search_btn" class="btn-modern">Search</button>
+            <input type = "text" id = "search_input">
+            <button id = "search_btn">Search</button>
             <!-- Search Output -->
           </div>
           <div id = "search_multiple"></div>
@@ -114,7 +112,7 @@
         <input type = "checkbox" id = "orange" checked>
         <label for = "red">Show red markers</label>
         <input type = "checkbox" id = "red" checked>
-        <button id = "apply_btn" class="btn-modern">Apply changes</button>
+        <button id = "apply_btn">Apply changes</button>
     </form>
   </div>
   <div id='map_legend_container'>
@@ -125,7 +123,6 @@
       <p>Red: > 1M</p>
   </div>
   </section>
-  </main>
   <footer>
     <p>2021 ID Assignment 3</p>
     <p>By: Tang Ming Feng and Josiah Low</p>
@@ -139,6 +136,5 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- api script -->
     <script src="Scripts/loadapi.js"></script>
-    <script src="Scripts/modern-enhancements.js"></script>
   </body>
 </html>
